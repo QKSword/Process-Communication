@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LPC", "LPC", "{809E32B1-4DD8-4EF8-B460-2A5E19626D64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NamePipe", "NamePipe", "{C8990A19-655E-47F5-ACA3-3C1DE77F1BC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mailslot", "Mailslot", "{3AC4D40E-9D13-4370-BD01-5A8A2A2FDE1C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NamepipeClient", "NamepipeClient\NamepipeClient.vcxproj", "{34ED0D79-4B3D-487D-9177-804C99E34905}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NamepipeServer", "NamepipeServer\NamepipeServer.vcxproj", "{B0315D03-1288-4979-8375-9DDCF323B5F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Debug|x64.ActiveCfg = Debug|x64
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Debug|x64.Build.0 = Debug|x64
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Debug|x86.ActiveCfg = Debug|Win32
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Debug|x86.Build.0 = Debug|Win32
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Release|x64.ActiveCfg = Release|x64
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Release|x64.Build.0 = Release|x64
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Release|x86.ActiveCfg = Release|Win32
+		{34ED0D79-4B3D-487D-9177-804C99E34905}.Release|x86.Build.0 = Release|Win32
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Debug|x64.ActiveCfg = Debug|x64
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Debug|x64.Build.0 = Debug|x64
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Debug|x86.ActiveCfg = Debug|Win32
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Debug|x86.Build.0 = Debug|Win32
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Release|x64.ActiveCfg = Release|x64
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Release|x64.Build.0 = Release|x64
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Release|x86.ActiveCfg = Release|Win32
+		{B0315D03-1288-4979-8375-9DDCF323B5F0}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34ED0D79-4B3D-487D-9177-804C99E34905} = {C8990A19-655E-47F5-ACA3-3C1DE77F1BC0}
+		{B0315D03-1288-4979-8375-9DDCF323B5F0} = {C8990A19-655E-47F5-ACA3-3C1DE77F1BC0}
+	EndGlobalSection
+EndGlobal
