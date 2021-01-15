@@ -7,7 +7,9 @@ int main()
 	HANDLE hEvent = NULL;
 
 	char* ReadBuffer = (char*)malloc(PipeBufferSize);
-	memset(ReadBuffer, 0, PipeBufferSize);
+	memset(ReadBuffer, 
+		0, 
+		PipeBufferSize);
 
 	OVERLAPPED Lapped = { 0 };
 
@@ -37,16 +39,26 @@ int main()
 
 	Lapped.hEvent = hEvent;
 
-	if (ConnectNamedPipe(hHandleNamepipe, &Lapped) == FALSE)		//异步通信这里返回FALSE，GetLastError获取到的值为ERROR_IO_PENDING
+	if (ConnectNamedPipe(hHandleNamepipe, 
+		&Lapped) == FALSE)		//异步通信这里返回FALSE，GetLastError获取到的值为ERROR_IO_PENDING
 	{
-		if (WaitForSingleObject(Lapped.hEvent, INFINITE) == WAIT_FAILED)
+		while (true)
 		{
-			goto Free;
+			if (WaitForSingleObject(Lapped.hEvent, 
+				INFINITE) == WAIT_FAILED)
+			{
+				goto Free;
+			}
+
+			ReadFile(hHandleNamepipe, 
+				ReadBuffer,
+				0x50,
+				&dwRead, 
+				NULL);
+			printf_s("Receive:%s\n", ReadBuffer);
 		}
 	}
 
-	ReadFile(hHandleNamepipe, ReadBuffer, 0x50, &dwRead, NULL);
-	
 Free:
 	if (hEvent > NULL)
 	{

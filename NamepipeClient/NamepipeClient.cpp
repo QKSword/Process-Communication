@@ -6,9 +6,12 @@ int main()
 	DWORD dwWrite = 0;
 
 	char* WriteBuffer = (char*)malloc(PipeBufferSize);
-	memset(WriteBuffer, 0, PipeBufferSize);
+	memset(WriteBuffer, 
+		0, 
+		PipeBufferSize);
 
-	if (WaitNamedPipe(NamePipe, NMPWAIT_WAIT_FOREVER) == FALSE)
+	if (WaitNamedPipe(NamePipe, 
+		NMPWAIT_WAIT_FOREVER) == FALSE)
 	{
 		printf_s("WaitNamepipe failed£º0x%x\n", GetLastError());
 		goto Free;
@@ -27,8 +30,16 @@ int main()
 		goto Free;
 	}
 
-	memset(WriteBuffer, 0x55, 0x50);
-	WriteFile(hHandleNamepipe, WriteBuffer, 0x50, &dwWrite, NULL);
+	while (true)
+	{
+		printf_s("Send Buffer:");
+		scanf_s("%s", WriteBuffer, 0x50);
+		WriteFile(hHandleNamepipe, 
+			WriteBuffer, 
+			0x50,
+			&dwWrite, 
+			NULL);
+	}
 	
 Free:
 
