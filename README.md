@@ -1,2 +1,2 @@
-## 进程通信：LPC、Namepipe、Mailslot
-## Process communication：LPC、Namepipe、Mailslot
+## 进程通信：Namepipe、Mailslot
+## Process communication：Namepipe、Mailslot
